@@ -4,28 +4,179 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Ergen Alymbekov - Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&display=swap"
+  rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+<canvas id="stars"></canvas>
+<div class="grid-overlay"></div>
+
+<div class="content">
+  <nav>
+    <span class="nav-logo">ergen@dev:~$ <span class="cursor"></span></span>
+    <div class="nav-links">
+      <a href="#about">./about</a>
+      <a href="#skills">./skills</a>
+      <a href="#projects">./projects</a>
+      <a href="#contact">./contact</a>
+    </div>
+  </nav>
+
+  <!--orbit decoration -->
+  <div class="orbit-wrap" aria-hidden="true">
+    <svg viewBox="0 0 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="140" cy="140" r="120" stroke="#7eb8f7" stroke-width="0.5" stroke-dasharray="4 8"/>
+        <circle cx="140" cy="140" r="80" stroke="7eb8f7" stroke-width="0.5" stroke-dasharray="2 6"/>
+      <circle cx="140" cy="140" r="40" stroke="7eb8f7" stroke-width="0.5"/>
+      <circle cx="140" cy="20" r="4" stroke="7eb8f7"/>
+      <circle cx="260" cy="140" r="3" stroke="7eb8f7"/>
+      <circle cx="80" cy="200" r="2" stroke="7eb8f7"/>
+    </svg>
+  </div>
+
+
+  <!--- hero --->
+  <section  class="hero">
+    <p class="hero-tag">// <span class="h1"> mission_control.java</span> - system initialized</p>
+    <h1 class="hero-name">Ergen<br><span class="h1">Alymbekov</span></h1>
+    <p class="hero-role">
+      <span class="kw">class</span> <span class="cl">BackendDeveloper</span> <span class="kw">extends</span> <span>Universe</span> {<br>
+      &nbsp;&nbsp;<span class="kw">String</span> location = <span class="st">"Bishkek, KG"</span>;<br>
+      &nbsp;&nbsp;<span class="kw">String</span> location = <span class="st">"open_to_work"</span>;<br>
+      }
+    </p>
+    <p class="hero-desc">
+      Building reliable backends from the edges of Kyrgyzstan.
+      Passionate about clean architecture, real-time systems,
+      and the infinite space between a bug and its fix.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">hire_me()</a>
+      <a href="https://github.com/Ergena11y" target="_blank" class="btn-secondery">view_github()-></a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- about -->
+  <section class="section" id="about">
+    <p class="section-label"><span class="h1">//</span>about.me</p>
+    <p class="about-text">
+      Java backend developer with <span class="h1">9 month</span> of intensive training and real project experience.
+      I build web applications using Spring Boot — from authentication systems to real-time chat.
+      Self-driven, detail-oriented, and always curious about what's on the other side of the stack.
+    </p>
+    <div class="about-stats">
+      <div>
+        <span class="stat-num">9</span>
+        <span class="stat-label">months training</span>
+      </div>
+      <div>
+        <span class="stat-num">2+</span>
+        <span class="stat-label">portfolio projects</span>
+      </div>
+      <div>
+        <span class="stat-num">∞</span>
+        <span class="stat-label">bugs fixed</span>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <!-- skills -->
+  <section class="section" id="skills">
+    <p class="section-label"><span class="h1">//</span> skills.stack</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Java 17+</span>
+      <span class="skill-tag">Spring Boot</span>
+      <span class="skill-tag">Spring Security</span>
+      <span class="skill-tag">Spring Data JPA</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">Liquibase</span>
+      <span class="skill-tag">REST API</span>
+      <span class="skill-tag">FreeMarker</span>
+      <span class="skill-tag">WebSocket / STOMP</span>
+      <span class="skill-tag">Maven</span>
+      <span class="skill-tag">Git</span>
+      <span class="skill-tag">H2</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- projects --->
+  <section class="section" id="projects">
+    <p class="section-label"><span class="h1">//</span>projects.deployed</p>
+
+    <div class="project-card">
+      <div>
+        <p class="project-number">01 - featured</p>
+        <p class="project-name">Job Search Platform</p>
+        <p class="project-desc">
+          HH.ru-style web application with role-based access for applicants and employers.
+          Features real-time chat via WebSocket/STOMP, dynamic resume builder with work experience blocks,
+          employer approval flow, and full Russian/English i18n support.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Spring Boot</span>
+          <span class="project-tag">·  PostgreSQL</span>
+          <span class="project-tag">·  WebSocket</span>
+          <span class="project-tag">·  Spring Security</span>
+          <span class="project-tag">·  Liquibase</span>
+        </div>
+      </div>
+      <a href="https://github.com/Ergena11y/Job_search" target="_blank" class="project-link">github-></a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <p class="project-number">02</p>
+        <p class="project-name">Flight Booking System</p>
+        <p class="project-desc">
+          Flight booking web app with multi-role access (User, Company, Admin).
+          Includes seat selection, booking management, and role-based dashboards.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Spring Boot</span>
+          <span class="project-tag">·  Spring Security</span>
+          <span class="project-tag">·  H2</span>
+          <span class="project-tag">·  Liquibase</span>
+        </div>
+      </div>
+      <a href="https://github.com/Ergena11y/Flight_BookingSystem.git" target="_blank" class="project-link">github -></a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <section class="contact-section" id="contact">
+    <p class="contact-title">Let's connect</p>
+    <p class="contact-sub">// open to junior backend roles and internships</p>
+    <div class="contact-links">
+      <a href="https://t.me/Ervyn_x" target="_blank" class="contact-link">telegram</a>
+      <a href="mailto:alymbekovergen7@gamil.com" class="contact-link">email</a>
+      <a href="https://github.com/Ergena11y" target="_blank" class="contact-link">github</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-text">© 2026 Ergen Alymbekov</span>
+    <span class="footer-text">// Bishkek, Kyrgyzstan · 40.5°N 72.9°E</span>
+  </footer>
+
+</div>
+
   <script src="js/app.js"></script>
 
 </body>

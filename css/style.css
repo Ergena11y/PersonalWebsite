@@ -1,247 +1,418 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+:root {
+  --bg: #060810;
+  --bg2: #080b14;
+  --bg3: #0c1018;
+  --accent: #7eb8f7;
+  --accent2: #6aaee8;
+  --accent3: #2a4a6a;
+  --text: #e8ecf8;
+  --text2: #8aabcc;
+  --text3: #5a7a9a;
+  --border: #1a2535;
+  --border2: #243548;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Syne', sans-serif;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
+html { scroll-behavior: smooth; }
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+body {
+  background: var(--bg);
+  color: var(--text2);
+  font-family: var(--sans);
+  overflow-x: hidden;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+
+#stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/*
- * A better looking default horizontal rule
- */
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+.grid-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(30, 58, 90, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 90, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
+.content { position: relative; z-index: 1; }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(6, 8, 16, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.nav-logo .cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--accent);
+  margin-left: 2px;
   vertical-align: middle;
+  animation: blink 1.2s step-end infinite;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+.nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
+.nav-links a:hover { color: var(--accent); }
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+.hero {
+  padding: 8rem 3rem 6rem;
+  max-width: 900px;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.hero-tag .hl { color: var(--accent2); }
+
+.hero-name {
+  font-family: var(--sans);
+  font-size: 64px;
+  font-weight: 700;
+  color: #e8ecf8;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-name .hl { color: var(--accent); }
+
+.hero-role {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text3);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.hero-role .kw { color: var(--accent2); }
+.hero-role .cl { color: #e8ecf8; }
+.hero-role .st { color: #5a9cc5; }
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--text3);
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 3rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--mono);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--text3);
+  font-size: 13px;
+  font-family: var(--mono);
+  border: 0.5px solid var(--border2);
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, border-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover { color: var(--accent); border-color: var(--accent3); }
+
+.orbit-wrap {
   position: absolute;
+  right: 3rem;
+  top: 6rem;
+  width: 280px;
+  height: 280px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.orbit-wrap svg { width: 100%; height: 100%; animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.divider {
+  height: 0.5px;
+  background: var(--border);
+  margin: 0 3rem;
+}
+
+.section { padding: 5rem 3rem; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.12em;
+  margin-bottom: 2.5rem;
+}
+
+.section-label .hl { color: var(--accent2); }
+
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 16px;
+  border: 0.5px solid var(--border);
+  border-radius: 3px;
+  font-size: 12px;
+  color: var(--text3);
+  font-family: var(--mono);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  color: var(--accent);
+  border-color: var(--accent3);
+  background: rgba(30, 58, 90, 0.15);
+}
+
+
+.about-text {
+  font-size: 15px;
+  color: var(--text3);
+  line-height: 1.9;
+  max-width: 580px;
+}
+
+.about-text .hl { color: var(--accent2); }
+
+.about-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+
+.stat-num {
+  font-family: var(--sans);
+  font-size: 36px;
+  font-weight: 700;
+  color: #e8ecf8;
+  display: block;
+}
+
+.stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+}
+
+
+.project-card {
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  background: var(--bg2);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--accent3);
+  background: #090d18;
+}
+
+.project-number {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.project-name {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: #c8d8f0;
+  margin-bottom: 0.6rem;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--text3);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+}
+
+.project-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  text-decoration: none;
   white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  transition: color 0.2s;
+  padding-top: 4px;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+.project-link:hover { color: var(--accent); }
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+
+.contact-section { padding: 5rem 3rem 7rem; }
+
+.contact-title {
+  font-family: var(--sans);
+  font-size: 36px;
+  font-weight: 700;
+  color: #e8ecf8;
+  margin-bottom: 0.8rem;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.contact-sub {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.clearfix::after {
-  clear: both;
+.contact-link {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text3);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border2);
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+.contact-link:hover { color: var(--accent); border-color: var(--accent); }
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+
+footer {
+  padding: 2rem 3rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.footer-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { gap: 1rem; }
+  .hero { padding: 5rem 1.5rem 4rem; }
+  .hero-name { font-size: 40px; }
+  .section { padding: 3.5rem 1.5rem; }
+  .divider { margin: 0 1.5rem; }
+  .project-card { flex-direction: column; }
+  .contact-section { padding: 3.5rem 1.5rem 5rem; }
+  footer { padding: 1.5rem; }
+  .orbit-wrap { display: none; }
+  .about-stats { gap: 1.5rem; }
 }
-

@@ -1,23 +1,21 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ergen Alymbekov - Backend Developer</title>
+  <title>Ergen Alymbekov — Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&display=swap"
-        rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <canvas id="stars"></canvas>
 <div class="grid-overlay"></div>
 
 <div class="content">
+
   <nav>
     <span class="nav-logo">ergen@dev:~$ <span class="cursor"></span></span>
     <div class="nav-links">
@@ -28,132 +26,194 @@
     </div>
   </nav>
 
-  <!--orbit decoration -->
-  <div class="orbit-wrap" aria-hidden="true">
-    <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="140" cy="140" r="120" stroke="#7eb8f7" stroke-width="0.5" stroke-dasharray="4 8"/>
-      <circle cx="140" cy="140" r="80" stroke="#7eb8f7" stroke-width="0.5" stroke-dasharray="2 6"/>
-      <circle cx="140" cy="140" r="40" stroke="#7eb8f7" stroke-width="0.5"/>
-      <circle cx="140" cy="20" r="4" fill="#7eb8f7"/>
-      <circle cx="260" cy="140" r="3" fill="#7eb8f7"/>
-      <circle cx="80" cy="200" r="2" fill="#7eb8f7"/>
-    </svg>
-  </div>
 
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">// <span class="hl">mission_control.java</span> · system initialized</p>
+      <h1 class="hero-name">Ergen<br><span class="hl">Alymbekov</span></h1>
+      <p class="hero-role">
+        <span class="kw">class</span> <span class="cl">BackendDeveloper</span> <span class="kw">extends</span> Universe {<br>
+        &nbsp;&nbsp;<span class="kw">String</span> location = <span class="st">"Bishkek, KG"</span>;<br>
+        &nbsp;&nbsp;<span class="kw">String</span> status = <span class="st">"open_to_work"</span>;<br>
+        }
+      </p>
+      <p class="hero-desc">
+        Building reliable backends from Kyrgyzstan.
+        Passionate about clean architecture, real-time systems,
+        and the infinite space between a bug and its fix.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">hire_me()</a>
+        <a href="https://github.com/Ergena11y" target="_blank" class="btn-secondary">view_github() →</a>
+      </div>
+    </div>
 
-  <!--- hero --->
-  <section  class="hero">
-    <p class="hero-tag">// <span class="hl"> mission_control.java</span> - system initialized</p>
-    <h1 class="hero-name">Ergen<br><span class="hl">Alymbekov</span></h1>
-    <p class="hero-role">
-      <span class="kw">class</span> <span class="cl">BackendDeveloper</span> <span class="kw">extends</span> <span>Universe</span> {<br>
-      &nbsp;&nbsp;<span class="kw">String</span> location = <span class="st">"Bishkek, KG"</span>;<br>
-      &nbsp;&nbsp;<span class="kw">String</span> status = <span class="st">"open_to_work"</span>;<br>
-      }
-    </p>
-    <p class="hero-desc">
-      Building reliable backends from the edges of Kyrgyzstan.
-      Passionate about clean architecture, real-time systems,
-      and the infinite space between a bug and its fix.
-    </p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">hire_me()</a>
-      <a href="https://github.com/Ergena11y" target="_blank" class="btn-secondary">view_github()-></a>
+    <div class="hero-right" aria-hidden="true">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">BackendDeveloper.java</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-ln">1</span><span class="t-kw">@RestController</span></div>
+          <div class="t-line"><span class="t-ln">2</span><span class="t-kw">@RequestMapping</span><span class="t-txt">(</span><span class="t-str">"/api"</span><span class="t-txt">)</span></div>
+          <div class="t-line"><span class="t-ln">3</span><span class="t-kw">public class</span> <span class="t-cl">ErgenController</span> <span class="t-txt">{</span></div>
+          <div class="t-line"><span class="t-ln">4</span></div>
+          <div class="t-line"><span class="t-ln">5</span>&nbsp;&nbsp;<span class="t-kw">@Autowired</span></div>
+          <div class="t-line"><span class="t-ln">6</span>&nbsp;&nbsp;<span class="t-kw">private</span> <span class="t-cl">SkillService</span> skills<span class="t-txt">;</span></div>
+          <div class="t-line"><span class="t-ln">7</span></div>
+          <div class="t-line"><span class="t-ln">8</span>&nbsp;&nbsp;<span class="t-kw">@GetMapping</span><span class="t-txt">(</span><span class="t-str">"/hire"</span><span class="t-txt">)</span></div>
+          <div class="t-line"><span class="t-ln">9</span>&nbsp;&nbsp;<span class="t-kw">public</span> <span class="t-cl">Developer</span> hire<span class="t-txt">() {</span></div>
+          <div class="t-line"><span class="t-ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-kw">return</span> skills<span class="t-txt">.</span>getErgen<span class="t-txt">();</span></div>
+          <div class="t-line"><span class="t-ln">11</span>&nbsp;&nbsp;<span class="t-txt">}</span></div>
+          <div class="t-line"><span class="t-ln">12</span><span class="t-txt">}</span></div>
+          <div class="t-line t-cursor-line"><span class="t-ln">13</span><span class="t-caret">█</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- about -->
+
   <section class="section" id="about">
-    <p class="section-label"><span class="hl">//</span>about.me</p>
-    <p class="about-text">
-      Java backend developer with <span class="hl">9 month</span> of intensive training and real project experience.
-      I build web applications using Spring Boot — from authentication systems to real-time chat.
-      Self-driven, detail-oriented, and always curious about what's on the other side of the stack.
-    </p>
-    <div class="about-stats">
-      <div>
-        <span class="stat-num">9</span>
-        <span class="stat-label">months training</span>
+    <p class="section-label"><span class="hl">//</span> about.me</p>
+    <div class="about-grid">
+      <div class="about-main">
+        <p class="about-text">
+          Java backend developer based in <span class="hl">Bishkek, Kyrgyzstan</span>.
+          9 months of intensive training at Attractor School — built full-stack apps
+          with Spring Security, WebSocket real-time chat, and Liquibase migrations from scratch.
+          Self-taught, detail-oriented, and actively looking for my first internship or junior role.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">9</span>
+            <span class="stat-label">months training</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">projects built</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">bugs fixed</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="stat-num">2+</span>
-        <span class="stat-label">portfolio projects</span>
-      </div>
-      <div>
-        <span class="stat-num">∞</span>
-        <span class="stat-label">bugs fixed</span>
+      <div class="about-side">
+        <div class="edu-card">
+          <p class="edu-label">// education</p>
+          <div class="edu-item">
+            <span class="edu-year">2025 — 2026</span>
+            <span class="edu-name">Attractor School</span>
+            <span class="edu-track">Java Backend Development</span>
+          </div>
+          <div class="edu-divider"></div>
+          <div class="edu-item">
+            <span class="edu-year">current</span>
+            <span class="edu-name">Self-study</span>
+            <span class="edu-track">Algorithms · Testing · System Design</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-
   <div class="divider"></div>
 
 
-  <!-- skills -->
   <section class="section" id="skills">
     <p class="section-label"><span class="hl">//</span> skills.stack</p>
-    <div class="skills-grid">
-      <span class="skill-tag">Java 17+</span>
-      <span class="skill-tag">Spring Boot</span>
-      <span class="skill-tag">Spring Security</span>
-      <span class="skill-tag">Spring Data JPA</span>
-      <span class="skill-tag">PostgreSQL</span>
-      <span class="skill-tag">Liquibase</span>
-      <span class="skill-tag">REST API</span>
-      <span class="skill-tag">FreeMarker</span>
-      <span class="skill-tag">WebSocket / STOMP</span>
-      <span class="skill-tag">Maven</span>
-      <span class="skill-tag">Git</span>
-      <span class="skill-tag">H2</span>
+    <div class="skills-categories">
+      <div class="skill-group">
+        <p class="skill-group-label">Backend</p>
+        <div class="skills-grid">
+          <span class="skill-tag">Java 17+</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Spring Security</span>
+          <span class="skill-tag">Spring Data JPA</span>
+          <span class="skill-tag">REST API</span>
+          <span class="skill-tag">WebSocket / STOMP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Database</p>
+        <div class="skills-grid">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">H2</span>
+          <span class="skill-tag">Liquibase</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-label">Tools</p>
+        <div class="skills-grid">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Maven</span>
+          <span class="skill-tag">FreeMarker</span>
+          <span class="skill-tag">IntelliJ IDEA</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
 
-  <!-- projects --->
   <section class="section" id="projects">
-    <p class="section-label"><span class="hl">//</span>pet-projects.</p>
+    <p class="section-label"><span class="hl">//</span> projects.featured</p>
 
     <div class="project-card">
-      <div>
-        <p class="project-number">01 - featured</p>
-        <p class="project-name">Job Search Platform</p>
+      <div class="project-accent"></div>
+      <div class="project-body">
+        <div class="project-header">
+          <div>
+            <p class="project-number">01 — featured</p>
+            <p class="project-name">Job Search Platform</p>
+          </div>
+          <a href="https://github.com/Ergena11y/Job_search" target="_blank" class="project-link">github →</a>
+        </div>
         <p class="project-desc">
           HH.ru-style web application with role-based access for applicants and employers.
-          Features real-time chat via WebSocket/STOMP, dynamic resume builder with work experience blocks,
-          employer approval flow, and full Russian/English i18n support.
+          Features real-time chat via WebSocket/STOMP, dynamic resume builder,
+          employer approval flow, JWT authentication, and full Russian/English i18n support.
         </p>
         <div class="project-tags">
           <span class="project-tag">Spring Boot</span>
-          <span class="project-tag">·  PostgreSQL</span>
-          <span class="project-tag">·  WebSocket</span>
-          <span class="project-tag">·  Spring Security</span>
-          <span class="project-tag">·  Liquibase</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">WebSocket</span>
+          <span class="project-tag">Spring Security</span>
+          <span class="project-tag">Liquibase</span>
+          <span class="project-tag">i18n</span>
         </div>
       </div>
-      <a href="https://github.com/Ergena11y/Job_search" target="_blank" class="project-link">github-></a>
     </div>
 
     <div class="project-card">
-      <div>
-        <p class="project-number">02</p>
-        <p class="project-name">Flight Booking System</p>
+      <div class="project-accent project-accent--dim"></div>
+      <div class="project-body">
+        <div class="project-header">
+          <div>
+            <p class="project-number">02</p>
+            <p class="project-name">Flight Booking System</p>
+          </div>
+          <a href="https://github.com/Ergena11y/Flight_BookingSystem.git" target="_blank" class="project-link">github →</a>
+        </div>
         <p class="project-desc">
-          Flight booking web app with multi-role access (User, Company, Admin).
+          Flight booking web app with multi-role access for Users, Companies, and Admins.
           Includes seat selection, booking management, and role-based dashboards.
         </p>
         <div class="project-tags">
           <span class="project-tag">Spring Boot</span>
-          <span class="project-tag">·  Spring Security</span>
-          <span class="project-tag">·  H2</span>
-          <span class="project-tag">·  Liquibase</span>
+          <span class="project-tag">Spring Security</span>
+          <span class="project-tag">H2</span>
+          <span class="project-tag">Liquibase</span>
+          <span class="project-tag">FreeMarker</span>
         </div>
       </div>
-      <a href="https://github.com/Ergena11y/Flight_BookingSystem.git" target="_blank" class="project-link">github -></a>
     </div>
   </section>
 
@@ -161,24 +221,45 @@
 
 
   <section class="contact-section" id="contact">
-    <p class="contact-title">Let's connect</p>
-    <p class="contact-sub">// open to junior backend roles and internships</p>
-    <div class="contact-links">
-      <a href="https://t.me/Ervyn_x" target="_blank" class="contact-link">telegram</a>
-      <span class="contact-link">alymbekovergen7@gmail.com</span>
-      <a href="https://github.com/Ergena11y" target="_blank" class="contact-link">github</a>
+    <div class="contact-grid">
+      <div>
+        <p class="section-label"><span class="hl">//</span> contact.init()</p>
+        <p class="contact-title">Open to work</p>
+        <p class="contact-sub">Looking for internships and junior backend roles — remote or Bishkek.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://t.me/Ervyn_x" target="_blank" class="contact-card">
+          <span class="contact-icon">✦</span>
+          <div>
+            <p class="contact-card-label">Telegram</p>
+            <p class="contact-card-val">@Ervyn_x</p>
+          </div>
+        </a>
+        <a href="mailto:alymbekovergen7@gmail.com" class="contact-card">
+          <span class="contact-icon">✦</span>
+          <div>
+            <p class="contact-card-label">Email</p>
+            <p class="contact-card-val">alymbekovergen7@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://github.com/Ergena11y" target="_blank" class="contact-card">
+          <span class="contact-icon">✦</span>
+          <div>
+            <p class="contact-card-label">GitHub</p>
+            <p class="contact-card-val">Ergena11y</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
   <footer>
     <span class="footer-text">© 2026 Ergen Alymbekov</span>
-    <span class="footer-text">// Bishkek, Kyrgyzstan · 40.5°N 72.9°E</span>
+    <span class="footer-text">// Bishkek, Kyrgyzstan · 42.8°N 74.5°E</span>
   </footer>
 
 </div>
 
 <script src="js/app.js"></script>
-
 </body>
-
 </html>
